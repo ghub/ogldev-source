@@ -1,6 +1,6 @@
 /*
 
-	Copyright 2010 Etay Meiri
+    Copyright 2010 Etay Meiri
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -31,13 +31,12 @@ static void InitializeGlutCallbacks()
     glutDisplayFunc(RenderSceneCB);
 }
 
-
 int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA);
-    glutInitWindowSize(1024, 768);
-    glutInitWindowPosition(100, 100);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
+    glutInitWindowSize(640, 480);
+    glutInitWindowPosition(300, 300);
     glutCreateWindow("Tutorial 01");
 
     InitializeGlutCallbacks();
@@ -45,6 +44,6 @@ int main(int argc, char** argv)
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
     glutMainLoop();
-    
+
     return 0;
 }
