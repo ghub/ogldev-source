@@ -1,6 +1,6 @@
 /*
 
-	Copyright 2010 Etay Meiri
+    Copyright 2010 Etay Meiri
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -40,7 +40,6 @@ static void RenderSceneCB()
     glutSwapBuffers();
 }
 
-
 static void InitializeGlutCallbacks()
 {
     glutDisplayFunc(RenderSceneCB);
@@ -53,18 +52,17 @@ static void CreateVertexBuffer()
     Vertices[1] = Vector3f(1.0f, -1.0f, 0.0f);
     Vertices[2] = Vector3f(0.0f, 1.0f, 0.0f);
 
- 	glGenBuffers(1, &VBO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
+    glGenBuffers(1, &VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
 }
-
 
 int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA);
-    glutInitWindowSize(1024, 768);
-    glutInitWindowPosition(100, 100);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
+    glutInitWindowSize(640, 480);
+    glutInitWindowPosition(300, 300);
     glutCreateWindow("Tutorial 03");
 
     InitializeGlutCallbacks();
@@ -84,5 +82,3 @@ int main(int argc, char** argv)
 
     return 0;
 }
-
-
