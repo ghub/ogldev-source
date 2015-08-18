@@ -42,8 +42,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=`pkg-config --cflags assimp` 
-CXXFLAGS=`pkg-config --cflags assimp` 
+CCFLAGS=`pkg-config --cflags assimp`
+CXXFLAGS=`pkg-config --cflags assimp`
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -52,7 +52,8 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lGLEW -lglut -lGL ../Common/dist/Debug/GNU-Linux-x86/libcommon.a
+# https://bugs.launchpad.net/ubuntu/+source/nvidia-graphics-drivers-319/+bug/1248642
+LDLIBSOPTIONS=-lGLEW -lglut -lGL ../Common/dist/Debug/GNU-Linux-x86/libcommon.a -lpthread
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -64,7 +65,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tutorial04: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tutorial04 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/tutorial04.o: tutorial04.cpp 
+${OBJECTDIR}/tutorial04.o: tutorial04.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../Include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/tutorial04.o tutorial04.cpp
