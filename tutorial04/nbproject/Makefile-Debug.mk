@@ -42,8 +42,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=`pkg-config --cflags assimp`
-CXXFLAGS=`pkg-config --cflags assimp`
+CCFLAGS=`pkg-config --cflags assimp x11`
+CXXFLAGS=`pkg-config --cflags assimp x11`
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -53,7 +53,7 @@ ASFLAGS=
 
 # Link Libraries and Options
 # https://bugs.launchpad.net/ubuntu/+source/nvidia-graphics-drivers-319/+bug/1248642
-LDLIBSOPTIONS=-lGLEW -lglut -lGL ../Common/dist/Debug/GNU-Linux-x86/libcommon.a -lpthread
+LDLIBSOPTIONS=-lGLEW -lglut `pkg-config --libs gl` ../Common/dist/Debug/GNU-Linux-x86/libcommon.a -lpthread
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

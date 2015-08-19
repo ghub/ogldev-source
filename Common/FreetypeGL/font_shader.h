@@ -35,6 +35,7 @@
 #define	SHADERS_H
 
 #include <GL/glew.h>
+#include <Glut/glut.h>
 
 class FontShader
 {

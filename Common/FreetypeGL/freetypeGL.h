@@ -36,7 +36,7 @@
 
 #include <GL/glew.h>
 #if defined(__APPLE__)
-    #include <Glut/glut.h>
+    #include <GL/freeglut.h>
 #else
     #include <GL/glut.h>
 #endif
