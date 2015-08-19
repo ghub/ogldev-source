@@ -32,7 +32,7 @@
  * ========================================================================= */
 #include <GL/glew.h>
 #if defined(__APPLE__)
-    #include <Glut/glut.h>
+    #include <GL/freeglut.h>
 #else
     #include <GL/glut.h>
 #endif
@@ -130,7 +130,7 @@ bool FontShader::InitFontShader()
     //
     GLint Success = 0;
     GLchar ErrorLog[1024] = { 0 };
-    GLuint vs, fs;
+    GLuint vs = 0, fs = 0;
 
     m_shaderProg = glCreateProgram();
 
